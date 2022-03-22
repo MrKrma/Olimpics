@@ -20,9 +20,10 @@ public class CountryData {
 		try {
 			
 			FileInputStream is;
-			is = new FileInputStream(new File("../listCountries.txt"));
+			is = new FileInputStream(new File("listCountries.txt"));
 			BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 			String line;
+			line = reader.readLine();
 			
 			while ((line= reader.readLine())!= null) {
 				String[] info = line.split(";");
@@ -59,7 +60,7 @@ public class CountryData {
 			case 2: //----------------------------------------------------------------- ordenamiento natural
 				Collections.sort(data);
 			break;
-			default: //---------------------------------------------------------------- algoritmo de ordenamiento ()
+			default: //---------------------------------------------------------------- Selection sort
 				sortAll();
 			break;
 		}
@@ -77,7 +78,7 @@ public class CountryData {
 		}
 	}
 	
-	//--------------------------------------------------------- falta por terminar el algoritmo de ordenamiento. (selection sort)
+	//--------------------------------------------------------- selection sort
 	private void sortAll() {
 		int total = data.size();
 		for(int i = 0; i < total; i++) {
